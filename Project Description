@@ -1,0 +1,23 @@
+Project: ASL Glove
+Team Members: Haritha Patil, Indraja Venigandla, Sangam Shrestha, and Sumati Gupta
+
+Problem Description
+Most people have a hard time understanding American Sign Language (ASL). When they come across a situation where they need to communicate or understand sign language, they require a human or electronic translator. This leads to alienation and miscommunication between two groups of people. 
+To reduce such alienation, we propose a child-friendly educational tool which will help people get acclimated to and learn sign language. 
+Project Description
+The aim of this project is to design a glove that can be used to teach the ASL alphabet. This glove will have flex sensors integrated into it, which will detect and keep track of various gestures for alphabets used in ASL and display them on an LCD screen. 
+
+Expectations and Deliverables 
+
+The final design for the ASL glove will be able to:
+
+Accurately recognize the intended ASL letter within 0.5-1 seconds of the user signing the letter 
+
+
+Display the intended letter on an LCD screen within 0.5-1 seconds of recognizing the intended letter 
+
+
+Calibrate itself so that different users can seamlessly use it. The calibration process should take 30 seconds in total. 
+
+
+Establish bluetooth communications between the glove and the LCD screen 
