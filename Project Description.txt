@@ -11,13 +11,7 @@ Expectations and Deliverables
 
 The final design for the ASL glove will be able to:
 
-Accurately recognize the intended ASL letter within 0.5-1 seconds of the user signing the letter 
-
-
-Display the intended letter on an LCD screen within 0.5-1 seconds of recognizing the intended letter 
-
-
-Calibrate itself so that different users can seamlessly use it. The calibration process should take 30 seconds in total. 
-
-
-Establish bluetooth communications between the glove and the LCD screen 
+1. Accurately recognize the intended ASL letter within 0.5-1 seconds of the user signing the letter 
+2. Display the intended letter on an LCD screen within 0.5-1 seconds of recognizing the intended letter 
+3. Calibrate itself so that different users can seamlessly use it. The calibration process should take 30 seconds in total. 
+4. Establish bluetooth communications between the glove and the LCD screen 
