@@ -1,0 +1,10 @@
+This code contains:
+  1. PIT code 
+  2. ADC code
+  3. DMA code
+  
+The main file just uses adc functions to convert from one channel for now and light up a LED, but all the code compiles with no errors. our next steps:
+  1. squentially implement conversion from 5 channels and light up LEDs
+  2. use timer to read inputs 
+  3. Store ADC values in DMA and use DMA array to light up LEDs 
+  
