@@ -5,6 +5,7 @@ This code contains:
   
 ADC works for one channel.
 Timer works. 
+DMA - doesn't enter interrupt but it updates reg values. (Mask and type cast issues)
 
 The main file just uses adc functions to convert from one channel for now and light up a LED, but all the code compiles with no errors. our next steps:
   1. squentially implement conversion from 5 channels and light up LEDs
