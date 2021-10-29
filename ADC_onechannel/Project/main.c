@@ -25,11 +25,20 @@ int main(void){
 	
 		
 	adc_init(); 
+	dma_init();
+	pit_init(); 
 	
 	while (1){
-		adc_read(); 
+		//adc_read(); 
 	  //pinky 
-		if ((float)(ADC0->R[0]) > 1000){
+		/*if ((float)(ADC0->R[0]) > 1000){
+			PTA->PSOR = MASK(LED_RED); 
+		}
+		else {
+			PTA->PCOR = MASK(LED_RED);
+		}*/
+		
+		if (conversion_done >= 1){
 			PTA->PSOR = MASK(LED_RED); 
 		}
 		else {
@@ -37,9 +46,9 @@ int main(void){
 		}
 	
 		//ring 
-		//if (ADC0->R[1] > 50){
-		//	PTA->PSOR = MASK(LED_YELLOW); 
-		//}
+		/*if (ADC0->R[1] > 50){
+			PTA->PSOR = MASK(LED_YELLOW); 
+		}*/
 	
 	}
 	
