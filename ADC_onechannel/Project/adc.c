@@ -79,13 +79,17 @@ void adc_read(){
 	internal_calibration_adc(); 
   ADC0->SC1[0] = ADCpinky_CH; 
 	ADC0->SC1[0] &= ~ ADC_SC1_COCO_MASK;
-	//internal_calibration_adc();
-	//ADC0->SC1[1] = ADCring_CH; 
-	//ADC0->SC1[1] &= ~ ADC_SC1_COCO_MASK;
 	
 	while (!(ADC0->SC1[0] & ADC_SC1_COCO_MASK))
-		;//wait for conversion to finish for ADCpinky  
-	//while (!(ADC0->SC1[1] & ADC_SC1_COCO_MASK))
+		;//wait for conversion to finish for ADCpinky 
+	
+	
+	/*internal_calibration_adc();
+	ADC0->SC1[0] = ADCring_CH; 
+	ADC0->SC1[0] &= ~ ADC_SC1_COCO_MASK;*/
+	
+	 
+	//while (!(ADC0->SC1[0] & ADC_SC1_COCO_MASK))
 	//	;//wait for conversion to finish for ADCring
 	
 	
