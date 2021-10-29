@@ -7,11 +7,7 @@
 #define thumb_index (4)
 
 //variable declarations 
-extern int conversion_done_pinky; 
-extern int conversion_done_ring; 
-extern int conversion_done_middle; 
-extern int conversion_done_index; 
-extern int conversion_done_thumb;
+extern int conversion_done; 
 extern uint16_t  GloveInputs[5];
 
 void dma_init(void); 
