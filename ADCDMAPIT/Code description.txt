@@ -12,11 +12,8 @@ GloveInputs values need to be shifted by 16 bits cuz the 32 sign-extension store
 
 Each LED is configured to light up based on one DMA input. 
 
-ISSUES: conversion done doesn't go past "2" even tho its incremented in DMA IRQHandler. We need this flag to know when UART transfer begins.
-
 Our next steps:
-  1. debug conversion flag
-  2. cliche flex sensors 
-  3. build flex sensor circuit 
-  4. Test with new circuit 
-  5. UART
+  1. clinch flex sensors 
+  2. build flex sensor circuit 
+  3. Test with new circuit 
+  4. UART
