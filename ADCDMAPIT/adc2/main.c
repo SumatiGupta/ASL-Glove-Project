@@ -10,6 +10,12 @@
 #define MASK(x) (1UL << (x))
 #define GLOVEMASK(x) ((x) >> 16)
 
+int shiftedpinky = 0; 
+int shiftedring = 0; 
+int shiftedmiddle = 0; 
+int shiftedindex = 0; 
+int shiftedthumb = 0; 
+
 int main(void){
 	
 	// Test code to see if ADC works 
@@ -44,40 +50,40 @@ int main(void){
 	
 	while (1){
 		
-		GLOVEMASK(GloveInputs[pinky_index]);
-		GLOVEMASK(GloveInputs[ring_index]);
-		GLOVEMASK(GloveInputs[middle_index]);
-		GLOVEMASK(GloveInputs[index_index]);
-		GLOVEMASK(GloveInputs[thumb_index]);
+		shiftedpinky = GLOVEMASK(GloveInputs[pinky_index]);
+		shiftedring = GLOVEMASK(GloveInputs[ring_index]);
+		shiftedmiddle = GLOVEMASK(GloveInputs[middle_index]);
+		shiftedindex = GLOVEMASK(GloveInputs[index_index]);
+		shiftedthumb = GLOVEMASK(GloveInputs[thumb_index]);
 		//PTA->PSOR |= MASK(LED_RED) | MASK(LED_YELLOW) | MASK(LED_GREEN) | MASK(LED_GREEN2) | MASK(CONVERSION_LED);
 		//PTD->PSOR |= MASK(LED_BLUE);
-		if (GloveInputs[pinky_index] > 0x200){
+		if (shiftedpinky > 0x200){
 			PTA->PSOR = MASK(LED_RED); 
 		}
 		else {
 			PTA->PCOR = MASK(LED_RED);
 		}
 		
-		if (GloveInputs[ring_index] > 0x200){
+		if (shiftedring > 0x200){
 			PTA->PSOR = MASK(LED_YELLOW); 
 		}
 		else {
 			PTA->PCOR = MASK(LED_YELLOW);
 		}
 		
-		if (GloveInputs[middle_index] > 0x200){
+		if (shiftedmiddle > 0x200){
 			PTD->PSOR = MASK(LED_BLUE); 
 		}
 		else {
 			PTD->PCOR = MASK(LED_BLUE);
 		}
-		if (GloveInputs[index_index] > 0x200){
+		if (shiftedindex > 0x200){
 			PTA->PSOR = MASK(LED_GREEN); 
 		}
 		else {
 			PTA->PCOR = MASK(LED_GREEN);
 		}
-		if (GloveInputs[thumb_index] > 0x200){
+		if (shiftedthumb > 0x200){
 			PTA->PSOR = MASK(LED_GREEN2); 
 		}
 		else {
