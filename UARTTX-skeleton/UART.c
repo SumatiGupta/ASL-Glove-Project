@@ -44,8 +44,8 @@ void Init_UART(void)
 					  // Its logic level is the same as the signal's idle state, i.e., logic high
 	UART1->C1 |= UART_C1_M(0); //Data bit mode - 8 bits - In 8-bit data mode, the shift register holds a
 					 //start bit, eight data bits, and a stop bit.
-  UART1->C1 |= UART_C1_LOOPS(0); //0: Normal operation - RxD and TxD use separate pins.
-	UART1->C1	|= UART1_C1_PE(0);	//Don't use parity bit
+  	UART1->C1 |= UART_C1_LOOPS(0); //0: Normal operation - RxD and TxD use separate pins.
+	UART1->C1 |= UART1_C1_PE(0);	//Don't use parity bit
 						//We can use parity bit but will need to change bit mode to 9 - The 9-bit data mode is typically used with parity to allow eight bits of data plus the parityin the ninth bit
 						//When parity is enabled, the bit immediately before the stop bit is treated as the parity bit
 						// a little confused about D being only 8 bits long
@@ -57,9 +57,10 @@ void Init_UART(void)
 	// Clear error flags
 	UART1->S1 |= UART_S1_OR_MASK | UART_S1_NF_MASK | UART_S1_FE_MASK | UART_S1_PF_MASK; //To clear these flags write logic one to them 
 
-  UART1->S2 = UART_S2_MSBF(0) | UART_S2_RXINV(0); //Send LSB first, do not invert received data
+ 	UART1->S2 = UART_S2_MSBF(0);
+	UART1 -> C3 = UART_C3_TXINV(0); //Send LSB first, do not invert transmitted data
 	
-	//POSIIBLE NEED IN CASE OF RECEIVER 
+	//POSSIBLE NEED IN CASE OF RECEIVER 
 	//If Receive Data Register Full Flag (RDRF bit) in UARTx_S1 is high and 
 	//setting RIE bit in C2 reg will cause an interrupt - clear flag intially at end of init (based on textbook)
 	//UART1->C2 |= UART_C2_RIE_MASK;
@@ -73,42 +74,42 @@ void UART1_Transmit_DMA() {
 	
 	
 		// transmit pinky data
-		while (!(UART1->S1 & UART0_S1_TDRE_MASK))
+		while (!(UART1->S1 & UART_S1_TDRE_MASK))
 			;
 		UART1->D = LSB(GloveInputs[pinky_index]);
-		while (!(UART1->S1 & UART0_S1_TDRE_MASK))
+		while (!(UART1->S1 & UART_S1_TDRE_MASK))
 			;
 		UART1->D = MSB(GloveInputs[pinky_index]);
 		
 		// transmit ring data
-		while (!(UART1->S1 & UART0_S1_TDRE_MASK))
+		while (!(UART1->S1 & UART_S1_TDRE_MASK))
 			;
 		UART1->D = LSB(GloveInputs[ring_index]);
-		while (!(UART1->S1 & UART0_S1_TDRE_MASK))
+		while (!(UART1->S1 & UART_S1_TDRE_MASK))
 			;
 		UART1->D = MSB(GloveInputs[ring_index]);
 		
 		// transmit middle data
-		while (!(UART1->S1 & UART0_S1_TDRE_MASK))
+		while (!(UART1->S1 & UART_S1_TDRE_MASK))
 			;
 		UART1->D = LSB(GloveInputs[middle_index]);
-		while (!(UART1->S1 & UART0_S1_TDRE_MASK))
+		while (!(UART1->S1 & UART_S1_TDRE_MASK))
 			;
 		UART1->D = MSB(GloveInputs[middle_index]);
 		
 		// transmit index data
-		while (!(UART1->S1 & UART0_S1_TDRE_MASK))
+		while (!(UART1->S1 & UART_S1_TDRE_MASK))
 			;
 		UART1->D = LSB(GloveInputs[index_index]);
-		while (!(UART1->S1 & UART0_S1_TDRE_MASK))
+		while (!(UART1->S1 & UART_S1_TDRE_MASK))
 			;
 		UART1->D = MSB(GloveInputs[index_index]);
 		
 		// transmit thumb data
-		while (!(UART1->S1 & UART0_S1_TDRE_MASK))
+		while (!(UART1->S1 & UART_S1_TDRE_MASK))
 			;
 		UART1->D = LSB(GloveInputs[thumb_index]);
-		while (!(UART1->S1 & UART0_S1_TDRE_MASK))
+		while (!(UART1->S1 & UART_S1_TDRE_MASK))
 			;
 		UART1->D = MSB(GloveInputs[thumb_index]);
  
