@@ -1,7 +1,5 @@
 #include "UART.h"
 
-uint16_t receivedbuffer[5]; 
-
 void Init_UART(void)
 {
 	// Let's use UART1 and PTE since UART1 uses PTA pins that already used for ADC
