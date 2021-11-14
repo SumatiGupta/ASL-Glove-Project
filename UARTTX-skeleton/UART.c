@@ -41,15 +41,15 @@ void Init_UART(void)
 	UART1->BDH |= UART_BDH_LBKDIE(0);  // for now let's disable it 
 	UART1->BDH |= UART_BDH_RXEDGIE(0); // Disable interrupts for RX active edge
 	UART1->BDH |= UART_BDH_SBNS(0);   // one stop-bit - only two options 1 or 2
-																	   // Its logic level is the same as the signal's idle state, i.e., logic high
+					  // Its logic level is the same as the signal's idle state, i.e., logic high
 	UART1->C1 |= UART_C1_M(0); //Data bit mode - 8 bits - In 8-bit data mode, the shift register holds a
-														 //start bit, eight data bits, and a stop bit.
+					 //start bit, eight data bits, and a stop bit.
   UART1->C1 |= UART_C1_LOOPS(0); //0: Normal operation - RxD and TxD use separate pins.
 	UART1->C1	|= UART1_C1_PE(0);	//Don't use parity bit
-																//We can use parity bit but will need to change bit mode to 9 - The 9-bit data mode is typically used with parity to allow eight bits of data plus the parityin the ninth bit
-																//When parity is enabled, the bit immediately before the stop bit is treated as the parity bit
-																// a little confused about D being only 8 bits long
-																// will also need to set PT bit in C1 to parity odd or even and enable interrupt for parity (PEIE) in C3 
+						//We can use parity bit but will need to change bit mode to 9 - The 9-bit data mode is typically used with parity to allow eight bits of data plus the parityin the ninth bit
+						//When parity is enabled, the bit immediately before the stop bit is treated as the parity bit
+						// a little confused about D being only 8 bits long
+						// will also need to set PT bit in C1 to parity odd or even and enable interrupt for parity (PEIE) in C3 
 																
 	// Don't enable interrupts for errors															
 	UART1->C3 = UART_C3_ORIE(0)| UART_C3_NEIE(0) | UART_C3_FEIE(0) | UART_C3_PEIE(0);															
