@@ -77,8 +77,8 @@ void Init_UART(void)
 	//setting RIE bit in C2 reg will cause an interrupt - clear flag intially at end of init (based on textbook)
 	//UART0->C2 |= UART_C2_RIE_MASK;
 	
-	//UART0->C2 |= UART0_C2_TE(1); // Enable UART transmitter - will need if we use transmitter
-	UART0->C2 |= UART0_C2_RE(1); // Enable UART receiver - will need 
+	UART0->C2 |= UART0_C2_TE(1); // Enable UART transmitter - will need if we use transmitter
+	//UART0->C2 |= UART0_C2_RE(1); // Enable UART receiver - will need 
 }
 
 void UART0_Transmit_DMA(int index) {
