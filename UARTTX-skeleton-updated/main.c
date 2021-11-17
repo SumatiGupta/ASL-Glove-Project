@@ -40,4 +40,5 @@ int main (void){
 		index++; 
 		if(index > 10) index = 0;
 		
+	}
 }
