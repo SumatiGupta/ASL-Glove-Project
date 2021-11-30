@@ -1,0 +1,92 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Indraja Venigandla, Oakland University, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.36.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.4.0
+Target DLL:      CMSIS_AGDI.dll V1.33.0.0
+Dialog DLL:      TARMCM1.DLL V1.14.4.0
+ 
+<h2>Project:</h2>
+C:\Users\nani\Desktop\LatestIntegratedScreen\CAL_RX.uvprojx
+Project File Date:  11/29/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+cal.c(1): warning: In file included from...
+./cal.h(2): warning: In file included from...
+./UART.h(26): warning: no newline at end of file [-Wnewline-eof]
+extern volatile int raise_this_flag;
+                                    ^
+cal.c(1): warning: In file included from...
+./cal.h(66): warning: no newline at end of file [-Wnewline-eof]
+void AVG(void);
+               ^
+cal.c(2): warning: In file included from...
+./UART.h(26): warning: no newline at end of file [-Wnewline-eof]
+extern volatile int raise_this_flag;
+                                    ^
+cal.c(99): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                        uint16_t min = Min(Standing_Ranges[i], Standing_Ranges[i+1]);
+                                 ~~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cal.c(100): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                        uint16_t max = Max(Standing_Ranges[i], Standing_Ranges[i+1]);
+                                 ~~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cal.c(103): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                        min = Min(Bent_Ranges[i], Bent_Ranges[i+1]);
+                            ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cal.c(104): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                        max = Max(Bent_Ranges[i], Bent_Ranges[i+1]);
+                            ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+7 warnings generated.
+compiling cal.c...
+linking...
+Program Size: Code=6604 RO-data=224 RW-data=20 ZI-data=800  
+".\Objects\CAL_RX.axf" - 0 Error(s), 7 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.Kinetis_KLxx_DFP.1.15.0.pack
+                Keil.Kinetis_KLxx_DFP.1.15.0
+                NXP Kinetis KLxx Series Device Support and Examples
+   * Component: Startup Version: 2.5.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\MKL25Z128xxx4
+  .\RTE\_Target_1
+  C:\Users\nani\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\nani\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: Keil::Device:Startup:2.5.0
+      Source file:   Device\Source\ARM\startup_MKL25Z4.s
+      Source file:   Device\Source\system_MKL25Z4.c
+      Include file:  Device\Source\system_MKL25Z4.h
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
