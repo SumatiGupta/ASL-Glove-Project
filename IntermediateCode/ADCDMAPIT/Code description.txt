@@ -1,0 +1,19 @@
+This code contains:
+  1. PIT code 
+  2. ADC code
+  3. DMA code
+  
+ 
+Progress: 
+PIT interrupts every 1ms and starts conversion sequentially for 8 ADC values (last three are junk values). ADC values are read and put into 
+GloveInputs array using DMA. 
+
+GloveInputs values need to be shifted by 16 bits cuz the 32 sign-extension stores values in MSB instead of LSB 
+
+Each LED is configured to light up based on one DMA input. 
+
+Our next steps:
+  1. clinch flex sensors 
+  2. build flex sensor circuit 
+  3. Test with new circuit 
+  4. UART
