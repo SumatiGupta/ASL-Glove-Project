@@ -15,3 +15,7 @@ The final design for the ASL glove will be able to:
 2. Display the intended letter on an LCD screen within 0.5-1 seconds of recognizing the intended letter 
 3. Calibrate itself so that different users can seamlessly use it. The calibration process should take 30 seconds in total. 
 4. Establish bluetooth communications between the glove and the LCD screen 
+
+The code in "Final Code" directory contains two directories, "Glove" and "LCD". The Glove dicrectory deals with the code related to the glove
+
+The current code works with a 16 segment display instead of an LCD screen
