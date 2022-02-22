@@ -1,5 +1,5 @@
 Project: ASL Glove
-Team Members: Haritha Patil, Indraja Venigandla, Sangam Shrestha, and Sumati Gupta
+Team Members: Sumati Gupta, Haritha Patil, Indraja Venigandla, and Sangam Shrestha. 
 
 Problem Description
 Most people have a hard time understanding American Sign Language (ASL). When they come across a situation where they need to communicate or understand sign language, they require a human or electronic translator. This leads to alienation and miscommunication between two groups of people. 
@@ -16,6 +16,25 @@ The final design for the ASL glove will be able to:
 3. Calibrate itself so that different users can seamlessly use it. The calibration process should take 30 seconds in total. 
 4. Establish bluetooth communications between the glove and the LCD screen 
 
-The code in "Final Code" directory contains two directories, "Glove" and "LCD". The Glove dicrectory deals with the code related to the glove
+The code in "Final Code" directory contains two directories, "Glove" and "LCD". 
+The Glove dicrectory deals with the code related to the glove. It reads the inputs from flex sensors attached on the glove and triggers a DMA transfer. There is some bit math needs to be done in order to send the read values correctly, once the reading is taken from all the inputs (flex sensor and the button to determine whether or not the user wants to calibrate, there is an led to indicate the mode as well), the code sends it via UART. This code uses a timer to periodically (every 10 ms) to read and send values.
 
-The current code works with a 16 segment display instead of an LCD screen
+For more technical details, refer to the Final Report. 
+
+How to use project:
+1. Connect both FRDM boards to power supply
+2. Press the button to indicate you should calibrate the flex sensors. When the LED is green, strech your fingers and when it is read, bend your fingers. (https://www.youtube.com/watch?v=7QInGuYTodQ)
+3. Once the system is calibrated, Sign any letter you want and see it display on the 16-segment display. 
+
+Video demonstration:
+1. Letters "A", "B", and "C" displayed based on finger positions - https://youtu.be/_WVLcP_ZgN8 
+2. Letter "D" displayed based on finger positions - https://youtu.be/m7DSW6J3_eg 
+3. Letter "I" displayed based on finger positions - https://youtu.be/3a8Pn2bjF5I 
+
+Future improvements:
+1. Use an LCD Screen instead of segment display
+2. Increase accuracy 
+3. Parallel ADC readings
+4. Use a PCB 
+5. incoperate words and phrases, so it can we used as a communication tool rather than an education tool. 
+6. Use Battery packs as power supply instead of power bank.
