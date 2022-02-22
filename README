@@ -7,9 +7,7 @@ To reduce such alienation, we propose a child-friendly educational tool which wi
 Project Description
 The aim of this project is to design a glove that can be used to teach the ASL alphabet. This glove will have flex sensors integrated into it, which will detect and keep track of various gestures for alphabets used in ASL and display them on an LCD screen. 
 
-Expectations and Deliverables 
-
-The final design for the ASL glove will be able to:
+The final design for the ASL glove has been able to:
 
 1. Accurately recognize the intended ASL letter within 0.5-1 seconds of the user signing the letter 
 2. Display the intended letter on an LCD screen within 0.5-1 seconds of recognizing the intended letter 
