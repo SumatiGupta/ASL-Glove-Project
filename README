@@ -17,8 +17,7 @@ The final design for the ASL glove will be able to:
 4. Establish bluetooth communications between the glove and the LCD screen 
 
 The code in "Final Code" directory contains two directories, "Glove" and "LCD". 
-The Glove dicrectory deals with the code related to the glove. It reads the inputs from flex sensors attached on the glove and triggers a DMA transfer. There is some bit math needs to be done in order to send the read values correctly, once the reading is taken from all the inputs (flex sensor and the button to determine whether or not the user wants to calibrate, there is an led to indicate the mode as well), the code sends it via UART. This code uses a timer to periodically (every 10 ms) to read and send values.
-
+The Glove dicrectory deals with the code related to the transmitter (the MCU connected to glove) and LCD directory deals with the code related to receiver (the MCU connected to the segment display).
 For more technical details, refer to the Final Report. 
 
 How to use project:
